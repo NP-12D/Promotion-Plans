@@ -1,0 +1,210 @@
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto";
+  width: 100%;
+  min-height: 100vh;
+  background-color: #292d33;
+    position: relative;
+}
+.X{
+  display: none;
+}
+.burger{
+  width:20px;
+  height: 20px;
+  display: flex;flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap:4px;
+  display: none;
+}
+.burger span{
+  height: 2px;
+  width: 100%;
+  background-color: black;
+}
+
+header {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0px;
+}
+header div {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: #ec3d45;
+}
+main{
+    width: 100%;
+    height: 1200px;
+    background-image: url("https://images03.nicepage.com/c461c07a441a5d220e8feb1a/1d7522477e8255a697949ad4/w4-min.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;align-items: center;
+    justify-content: center;
+    position: relative;
+}
+main .h1_text{
+    width:40%;
+    display: flex;align-items: center;
+    justify-content: center;
+    gap:20px;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    height:400px;
+    text-align: center;
+}
+main .h1_text p{
+    width: 70%;
+}
+.contact{
+position: absolute;
+bottom: 0;
+width: 100%;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+height:200px;
+ background-color: rgba(0,0,0,0.8);
+ color: white;
+}
+.contact>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "img h2"
+                          "img a";
+    
+}
+.contact>div img{
+  grid-area: img;
+ margin: auto;
+}
+.contact>div h2{
+  grid-area: h2;
+  text-align: left;
+}
+.contact>div a{
+  grid-area: a;
+  text-align: center;
+}
+.contact a{
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+.contact>div:nth-of-type(1){
+    background-color: #08b9ca;
+}
+
+.contact>div:nth-of-type(2){
+    background-color: #ff9d00;
+}
+.contact>div:nth-of-type(3){
+    background-color:#ec3d45;
+}
+@media screen and (max-width:750px) {
+   .contact>div {
+    grid-template-columns: 1fr;
+    grid-template-areas: "img"
+    "h2"
+    "a";
+   }
+   .contact >div h2{
+    text-align: center;
+   }
+}
+@media screen and (max-width:750px) {
+  .contact{
+    grid-template-columns: 1fr;
+  }
+ main .h1_text{
+    width: 90%;
+    height: 500px;
+  }
+  .h1_text h1{
+font-size: 20px;
+  }
+  .h1_text p{
+    font-size: 18px;
+  }
+   
+  .burger{
+    display: flex;
+  }
+  nav{
+    position: fixed;
+    left:-120%;
+    top:0px;
+    width:60%;
+    height: 100vh;
+    background-color: #000000;
+    opacity: 0.9;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 888;
+    
+
+
+  }
+  body.no_scroll{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+   
+     
+  }
+  body.no_scroll  main{
+    opacity: 0.3;
+  }
+
+  nav.active a{
+    color: white;
+  }
+  nav.active{
+    left:0;
+  }
+  nav.active .X{
+    display: flex;
+    color: white;
+    position: absolute;
+    top:20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}
+@media  screen and (max-width:450px) {
+  nav{
+    width: 50%;
+  }
+}
